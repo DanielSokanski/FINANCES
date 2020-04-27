@@ -4,7 +4,7 @@
 #include<iostream>
 #include<vector>
 #include<windows.h>
-//#include "FileWithUsers.h"
+#include "FileWithUsers.h"
 #include "User.h"
 using namespace std;
 
@@ -15,7 +15,7 @@ class UserManager
     User enterNewUserData();
     int getIdOfNewUser();
     bool doesLoginExist(string login);
-    //FileWithUsers fileWithUsers;
+    FileWithUsers fileWithUsers;
 
 public:
     /*UserManager(string userFileName) : fileWithUsers(userFileName){

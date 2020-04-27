@@ -1,13 +1,14 @@
 # depslib dependency file v1.0
-1587416190 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
+1588006796 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
 	"FileWithUsers.h"
 
-1587628065 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
+1588006796 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
 	<iostream>
 	<vector>
 	<fstream>
 	<cstdlib>
 	"User.h"
+	"Markup.h"
 
 1587416190 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\user.h
 	<iostream>
@@ -22,10 +23,11 @@
 	<iostream>
 	"UserManager.h"
 
-1588006111 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.h
+1588006844 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.h
 	<iostream>
 	<vector>
 	<windows.h>
+	"FileWithUsers.h"
 	"User.h"
 
 1588006111 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\main.cpp

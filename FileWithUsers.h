@@ -18,9 +18,9 @@ class FileWithUsers
     vector<User> users;
 public:
     //FileWithUsers(string nazwaPlikuZUzytkownikami): TextFile(nazwaPlikuZUzytkownikami){};
-    vector <User> getUserFromFile();
-    void addUserToFile(User users);
-    void saveAllUsersToFile(vector<User> &users);
+    //vector <User> getUserFromFile();
+    void addUserToFile(User user);
+    //void saveAllUsersToFile(vector<User> &users);
 };
 
 
