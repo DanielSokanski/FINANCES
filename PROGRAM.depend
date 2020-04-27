@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1587416190 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
+	"FileWithUsers.h"
+
+1587628065 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"User.h"
+
+1587416190 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\user.h
+	<iostream>
+
+1587499104 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\user.cpp
+	"User.h"
+
+1588006111 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.cpp
+	"YourBudget.h"
+
+1588006111 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.h
+	<iostream>
+	"UserManager.h"
+
+1588006111 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	"User.h"
+
+1588006111 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\main.cpp
+	<iostream>
+	"YourBudget.h"
+
+1588005038 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.cpp
+	"UserManager.h"
+
+1585596396 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1585596396 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
