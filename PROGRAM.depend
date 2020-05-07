@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1588006796 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
+1588190411 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
 	"FileWithUsers.h"
 
-1588006796 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
+1588014097 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
 	<iostream>
 	<vector>
-	<fstream>
 	<cstdlib>
 	"User.h"
 	"Markup.h"
+	"XMLFile.h"
 
 1587416190 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\user.h
 	<iostream>
@@ -16,25 +16,26 @@
 1587499104 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\user.cpp
 	"User.h"
 
-1588006111 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.cpp
+1588007801 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.cpp
 	"YourBudget.h"
 
-1588006111 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.h
+1588847918 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\yourbudget.h
 	<iostream>
 	"UserManager.h"
+	"IncomeManager.h"
 
-1588006844 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.h
+1588014089 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.h
 	<iostream>
 	<vector>
 	<windows.h>
 	"FileWithUsers.h"
 	"User.h"
 
-1588006111 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\main.cpp
+1588007801 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\main.cpp
 	<iostream>
 	"YourBudget.h"
 
-1588005038 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.cpp
+1588514364 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\usermanager.cpp
 	"UserManager.h"
 
 1585596396 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\markup.cpp
@@ -50,4 +51,45 @@
 	<string.h>
 	<string>
 	<afx.h>
+
+1588014089 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\xmlfile.h
+	<iostream>
+
+1588014089 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\xmlfile.cpp
+	"XMLFile.h"
+
+1588014230 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\incomemanager.cpp
+
+1588169089 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithincomes.cpp
+
+1588847774 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\incomes.cpp
+	"Incomes.h"
+
+1588160759 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\incomes.h
+	<iostream>
+
+1588847703 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\incomemanager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<sstream>
+	<algorithm>
+	<cstdlib>
+	"UserManager.h"
+	"FileWithUsers.h"
+	"FileWithIncomes.h"
+	"Incomes.h"
+	"User.h"
+	"XMLFile.h"
+
+1588858939 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithincomes.h
+	<iostream>
+	<vector>
+	<cstdlib>
+	"Incomes.h"
+	"Markup.h"
+	"XMLFile.h"
+	"IncomeManager.h"
+
+1587622526 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\textfile.h
 

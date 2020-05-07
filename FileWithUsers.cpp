@@ -1,27 +1,32 @@
 #include "FileWithUsers.h"
 
 
-/*vector <User> FileWithUsers::loadUsersFromFile()
+vector <User> FileWithUsers::loadUsersFromFile()
 {
-    bool fileExists = xml.Load( "users.xml" );
-
-    if (!fileExists)
+    User user;
+    vector <User> users;
+    xml.Load( "users.xml" );
+    xml.FindElem( "Users" );
+    xml.IntoElem();
+    while(xml.FindElem( "User" ))
     {
-        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
-        xml.AddElem("Users");
+    xml.IntoElem();
+    xml.FindElem("UserId");
+    user.setUserId(atoi(MCD_2PCSZ(xml.GetData())));
+    xml.FindElem("Login");
+    user.setLogin(MCD_2PCSZ(xml.GetData()));
+    xml.FindElem("Password");
+    user.setPassword(MCD_2PCSZ(xml.GetData()));
+    xml.FindElem("Name");
+    user.setName(MCD_2PCSZ(xml.GetData()));
+    xml.FindElem("Surname");
+    user.setSurname(MCD_2PCSZ(xml.GetData()));
+    users.push_back(user);
+    xml.OutOfElem();
+
     }
-
-    xml.FindElem();
-    xml.IntoElem();
-    xml.AddElem("User");
-    xml.IntoElem();
-    xml.AddElem("UserId", "2");
-    xml.AddElem("Login", "bartek");
-    xml.AddElem("Password", "456");
-
-    xml.Save("users.xml");
 }
-*/
+
 
 void FileWithUsers::addUserToFile(User user)
 {

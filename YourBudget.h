@@ -4,6 +4,7 @@
 #include<iostream>
 
 #include "UserManager.h"
+#include "IncomeManager.h"
 
 
 using namespace std;
@@ -11,25 +12,26 @@ using namespace std;
 class YourBudget
 {
     UserManager userManager;
-    //AdresatManager *adresatManager;
-    //const string NAZWA_PLIKU_Z_ADRESATAMI;
+    IncomeManager *incomeManager;
+    const string FILE_NAME_WITH_INCOMES;
 public:
-    /*YourBudget
-    (string NazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) :
-    uzytkownikManadzer(NazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    YourBudget
+    (string FileNameWithUsers, string fileNameWithIncomes) :
+    userManager(FileNameWithUsers), FILE_NAME_WITH_INCOMES(fileNameWithIncomes)
     {
-    adresatManager = NULL;
+    incomeManager = NULL;
     };
-    ~KsiazkaAdresowa()
+    ~YourBudget()
     {
-        delete adresatManager;
-        adresatManager = NULL;
-    };*/
+        delete incomeManager;
+        incomeManager = NULL;
+    };
     bool isUserLogedIn();
     char chooseOptionFromMainMenu();
     char chooseOptionFromUserMenu();
     void registrationOfUser();
     void showAllUsers();
+    void loginOfUser();
 };
 
 

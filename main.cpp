@@ -1,12 +1,15 @@
 #include <iostream>
 #include "YourBudget.h"
+#include "FileWithUsers.h"
 using namespace std;
 
 int main()
 {
-    //FileWithUsers fileWithUsers("users.xml");
 
-    YourBudget yourBudget;
+    YourBudget yourBudget("Users.xml" , "Incomes.xml");
+
+    FileWithUsers fileWithUsers("users.xml");
+
     int loggedInUserId=0;
     char choise;
     while (true)
@@ -22,10 +25,10 @@ int main()
                 break;
 
             case '2':
-                //ksiazkaAdresowa.logowanieUzytkownika();
+                yourBudget.loginOfUser();
                 break;
             case '9':
-                //exit(0);
+                exit(0);
                 break;
             case '3':
                 yourBudget.showAllUsers();

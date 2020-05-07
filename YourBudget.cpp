@@ -24,3 +24,8 @@ void YourBudget::showAllUsers()
 {
     userManager.showAllUsers();
 }
+
+void YourBudget::loginOfUser()
+{
+    userManager.loginOfUser();
+}

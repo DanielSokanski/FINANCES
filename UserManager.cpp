@@ -49,15 +49,14 @@ char UserManager::chooseOptionFromUserMenu()
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
-    cout << "1. Dodaj adresata" << endl;
-    cout << "2. Wyszukaj po imieniu" << endl;
-    cout << "3. Wyszukaj po nazwisku" << endl;
-    cout << "4. Wyswietl adresatow" << endl;
-    cout << "5. Usun adresata" << endl;
-    cout << "6. Edytuj adresata" << endl;
+    cout << "1. Dodaj przychod" << endl;
+    cout << "2. Dodaj wydatek" << endl;
+    cout << "3. Bilans z bie¿¹cego miesi¹ca" << endl;
+    cout << "4. Bilans z poprzedniego miesi¹ca" << endl;
+    cout << "5. Bilans z wybranego okresu" << endl;
     cout << "---------------------------" << endl;
-    cout << "7. Zmien haslo" << endl;
-    cout << "8. Wyloguj sie" << endl;
+    cout << "6. Zmieñ has³o" << endl;
+    cout << "7. Wyloguj siê" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     choise = getLine();
@@ -128,4 +127,46 @@ void UserManager::showAllUsers()
         cout << users[i].getName() << endl;
         cout << users[i].getSurname() << endl;
     }
+}
+
+void UserManager::loginOfUser()
+{
+    User user;
+    string login = "", password = "";
+    cout << endl << "Podaj login: ";
+    login = getWholeLine();
+    vector <User>::iterator itr = users.begin();
+    while (itr != users.end())
+    {
+        if (itr -> getLogin() == login)
+        {
+            for (int noOfChances = 3; noOfChances > 0; noOfChances--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << noOfChances << ": ";
+                password = getWholeLine();
+
+                if (itr -> getPassword() == password)
+                {
+                    loggedInUserId = itr -> getUserId();
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return;
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return;
+        }
+        itr++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return;
+}
+
+string UserManager::getWholeLine()
+{
+    string input = "";
+    getline(cin, input);
+    return input;
 }

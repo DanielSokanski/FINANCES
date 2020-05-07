@@ -10,25 +10,28 @@ using namespace std;
 
 class UserManager
 {
-    //int loggedInUserId;
+    int loggedInUserId;
     vector<User> users;
     User enterNewUserData();
     int getIdOfNewUser();
     bool doesLoginExist(string login);
     FileWithUsers fileWithUsers;
 
+
 public:
-    /*UserManager(string userFileName) : fileWithUsers(userFileName){
+    UserManager(string fileNameWithUsers):fileWithUsers(fileNameWithUsers){
     loggedInUserId = 0;
-    //users = fileWithUsers.loadUsersFromFile();
-    };*/
-    int loggedInUserId = 0;
+    users = fileWithUsers.loadUsersFromFile();
+    };
+
     bool isUserLogedIn();
     char chooseOptionFromMainMenu();
     char getLine();
     char chooseOptionFromUserMenu();
     void registrationOfUser();
     void showAllUsers();
+    void loginOfUser();
+    string getWholeLine();
 };
 
 

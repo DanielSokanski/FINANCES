@@ -1,24 +1,25 @@
 #ifndef FILEWITHUSERS_H
 #define FILEWITHUSERS_H
 
-#include<iostream>
-#include<vector>
-#include<fstream>
+#include <iostream>
+#include <vector>
 #include <cstdlib>
 #include "User.h"
 #include "Markup.h"
-//#include "TextFile.h"
+#include "XMLFile.h"
+
 
 using namespace std;
 
-class FileWithUsers
+class FileWithUsers: public XMLFile
 {
+
     CMarkup xml;
     const string USERS_FILE_NAME;
     vector<User> users;
 public:
-    //FileWithUsers(string nazwaPlikuZUzytkownikami): TextFile(nazwaPlikuZUzytkownikami){};
-    //vector <User> getUserFromFile();
+    FileWithUsers(string fileNameWithUsers): XMLFile(fileNameWithUsers){};
+    vector <User> loadUsersFromFile();
     void addUserToFile(User user);
     //void saveAllUsersToFile(vector<User> &users);
 };
