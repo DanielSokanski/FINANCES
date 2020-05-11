@@ -1,12 +1,12 @@
 #include "FileWithIncomes.h"
 
-vector <Incomes> FileWithIncomes::loadIncomesOfLoggedInUser()
+vector <Incomes> FileWithIncomes::loadIncomesOfLoggedInUser(int userId)
 {
     int date;
     Incomes income;
-    vector <Incomes> incomes;
+    //vector <Incomes> incomes;
     CMarkup xml;
-    xml.Load( "incomes.xml" );
+    xml.Load(getFileName().c_str());
     xml.FindElem( "Incomes" );
     xml.IntoElem();
     while(xml.FindElem( "Income" ))
@@ -29,11 +29,12 @@ vector <Incomes> FileWithIncomes::loadIncomesOfLoggedInUser()
     }
     xml.OutOfElem();
     }
+    return income;
 }
 bool FileWithIncomes::addIncomesToFile(Incomes incomes)
 {
-
-    bool fileExists = xml.Load( "incomes.xml" );
+    CMarkup xml;
+    bool fileExists = xml.Load( getFileName().c_str() );
 
     if (!fileExists)
     {
@@ -71,5 +72,18 @@ int FileWithIncomes::changeToNumber(string date)
 
     return fullDate;
 }
+int FileWithIncomes::loadUserId()
+{
+    CMarkup xml;
 
+    xml.Load( getFileName().c_str() );
+    xml.FindElem( "Incomes" );
+    xml.IntoElem();
+    xml.FindElem( "Income" );
+    xml.IntoElem();
+    xml.FindElem("userId");
+    int USERID = atoi(MCD_2PCSZ(xml.GetData()));
+    xml.OutOfElem();
+    return USERID;
+}
 

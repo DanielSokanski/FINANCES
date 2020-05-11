@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ExpenceManager.cpp" />
+		<Unit filename="ExpenceManager.h" />
+		<Unit filename="Expences.cpp" />
+		<Unit filename="Expences.h" />
+		<Unit filename="FileWithExpences.cpp" />
+		<Unit filename="FileWithExpences.h" />
 		<Unit filename="FileWithIncomes.cpp" />
 		<Unit filename="FileWithIncomes.h" />
 		<Unit filename="FileWithUsers.cpp" />

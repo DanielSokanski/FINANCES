@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1588190411 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
+1588881867 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.cpp
 	"FileWithUsers.h"
 
-1588014097 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
+1588933745 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\filewithusers.h
 	<iostream>
 	<vector>
 	<cstdlib>
@@ -92,4 +92,10 @@
 	"IncomeManager.h"
 
 1587622526 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\textfile.h
+
+1588858940 source:e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\expences.cpp
+	"Expences.h"
+
+1589183787 e:\diablo 3\prywatne\bud¯et domowy 30.03.2020\program\program\expences.h
+	<iostream>
 

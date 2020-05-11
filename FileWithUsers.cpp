@@ -54,3 +54,24 @@ void FileWithUsers::addUserToFile(User user)
       //  cout << "Nie udalo sie otworzyc pliku " << pobierzNazwePliku() << " i zapisac w nim danych." << endl;
 
 }
+void FileWithUsers::saveAllUsersToFile(vector<User> &users)
+{
+    bool fileExists = xml.Load( "users.xml" );
+    if (!fileExists)
+        {
+        xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
+        xml.AddElem("Users");
+        }
+    xml.FindElem();
+    xml.IntoElem();
+    xml.AddElem("User");
+    xml.IntoElem();
+    for (int i=0; i<users.size(); i++){
+        xml.AddElem("UserId", users[i].getUserId());
+        xml.AddElem("Login", users[i].getLogin());
+        xml.AddElem("Password", users[i].getPassword());
+        xml.AddElem("Name", users[i].getName());
+        xml.AddElem("Surname", users[i].getSurname());
+    }
+    xml.Save("users.xml");
+}

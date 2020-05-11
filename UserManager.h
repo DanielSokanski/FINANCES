@@ -6,6 +6,8 @@
 #include<windows.h>
 #include "FileWithUsers.h"
 #include "User.h"
+#include "IncomeManager.h"
+#include "ExpenceManager.h"
 using namespace std;
 
 class UserManager
@@ -32,6 +34,13 @@ public:
     void showAllUsers();
     void loginOfUser();
     string getWholeLine();
+    void compareExpencesToIncomesInCurrentMonth();
+    void compareExpencesToIncomesInPreviousMonth();
+    void compareExpencesToIncomesFromCustomDates();
+    void changePassword();
+    void logoutOfUser();
+    int getIdOfLoggedInUser();
+
 };
 
 

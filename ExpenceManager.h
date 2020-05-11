@@ -17,9 +17,9 @@ using namespace std;
 
 class ExpenceManager
 {
-    int LOGGED_IN_USER_ID;
-    vector <Expence>expences;
-    FileWithExpence fileWithExpences;
+    const int LOGGED_IN_USER_ID;
+    vector <Expences>expences;
+    FileWithExpences fileWithExpences;
     int loggerInUserId;
     void showExpenceData();
 public:

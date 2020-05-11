@@ -1,15 +1,18 @@
 #include <iostream>
 #include "YourBudget.h"
 #include "FileWithUsers.h"
+#include "FileWithIncomes.h"
+#include "FileWithExpences.h"
 using namespace std;
 
 int main()
 {
 
-    YourBudget yourBudget("Users.xml" , "Incomes.xml");
+    YourBudget yourBudget("users.xml" , "incomes.xml" ,"expences.xml");
 
     FileWithUsers fileWithUsers("users.xml");
-
+    FileWithExpences fileWithExpences("expences.xml");
+    FileWithIncomes fileWithIncomes("incomes.xml");
     int loggedInUserId=0;
     char choise;
     while (true)
@@ -48,29 +51,27 @@ int main()
             switch (choise)
             {
             case '1':
-                //ksiazkaAdresowa.dodajAdresata();
+                yourBudget.addIncome();
                 break;
             case '2':
-                //ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                yourBudget.addExpence();
                 break;
             case '3':
-                //ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                yourBudget.compareExpencesToIncomesInCurrentMonth();
                 break;
             case '4':
-                //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                yourBudget.compareExpencesToIncomesInPreviousMonth();
                 break;
             case '5':
-                //ksiazkaAdresowa.usunAdresata();
+                yourBudget.compareExpencesToIncomesFromCustomDates();
                 break;
             case '6':
-                //ksiazkaAdresowa.edytujAdresata();
+                yourBudget.changePassword();
                 break;
             case '7':
-                //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                yourBudget.logoutOfUser();
                 break;
-            case '8':
-                //ksiazkaAdresowa.wylogowanieUzytkownika();
-                break;
+
             }
         }
     }

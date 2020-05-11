@@ -7,21 +7,22 @@
 #include "Incomes.h"
 #include "Markup.h"
 #include "XMLFile.h"
-#include "eExpenceManager.h"
+#include "ExpenceManager.h"
 
 class FileWithExpences: public XMLFile
 {
     const string FILE_NAME_WITH_INCOMES;
     int lastExpenceId;
-    Expence loadExpenceOfLoggedInUser();
-
+    int loadUserId();
 public:
     FileWithExpences(string fileName) : XMLFile(fileName)
         {
         lastExpenceId = 0;
         );
-    bool addExpenceToFile();
+    bool addExpenceToFile(Expences expences);
     int getIdOfLastExpence();
+    vector <Incomes> loadExpenceOfLoggedInUser();
+    int changeToNumber(string date);
 };
 
 #endif

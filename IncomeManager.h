@@ -13,21 +13,23 @@
 #include"Incomes.h"
 #include"User.h"
 #include"XMLFile.h"
+
 using namespace std;
 
 class IncomeManager
 {
-    int LOGGED_IN_USER_ID;
-    vector <Incomes>incomes;
     FileWithIncomes fileWithIncomes;
-    int loggerInUserId;
-    void showIncomesData();
+    const int LOGGED_IN_USER_ID;
+    vector <Incomes>incomes;
+    int loggedInUserId;
+    void showIncomesData(Incomes income);
 public:
-    IncomeManager(string fileNameWithIncomes, int loggerInUserId) :
-        fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID (loggerInUserId)
+    IncomeManager(string fileNameWithIncomes, int loggedInUserId) :
+        fileWithIncomes(fileNameWithIncomes), LOGGED_IN_USER_ID (loggedInUserId)
         {
         incomes = fileWithIncomes.loadIncomesOfLoggedInUser(LOGGED_IN_USER_ID);
         };
+    Incomes enterNewIncome();
     void showAllIncomes();
     void addIncomes();
     float changeCommaToDotInAmount();

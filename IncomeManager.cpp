@@ -217,3 +217,11 @@ bool IncomeManager::leapyear (int year) {
         false;
 }
 
+void IncomeManager::showIncomesData(Incomes income)
+{
+    cout << endl << "Id:         " << income.getIncomeId() << endl;
+    cout << "Id uzytkownika:     " << income.getUserId() << endl;
+    cout << "Data:               " << income.getDate() << endl;
+    cout << "Przychod:           " << income.getItem() << endl;
+    cout << "Kwota:              " << income.getAmount() << endl;
+}

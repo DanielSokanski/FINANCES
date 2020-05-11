@@ -51,11 +51,11 @@ char UserManager::chooseOptionFromUserMenu()
     cout << "---------------------------" << endl;
     cout << "1. Dodaj przychod" << endl;
     cout << "2. Dodaj wydatek" << endl;
-    cout << "3. Bilans z bie¿¹cego miesi¹ca" << endl;
-    cout << "4. Bilans z poprzedniego miesi¹ca" << endl;
+    cout << "3. Bilans z biezacego miesiaca" << endl;
+    cout << "4. Bilans z poprzedniego miesiaca" << endl;
     cout << "5. Bilans z wybranego okresu" << endl;
     cout << "---------------------------" << endl;
-    cout << "6. Zmieñ has³o" << endl;
+    cout << "6. Zmien haslo" << endl;
     cout << "7. Wyloguj siê" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
@@ -169,4 +169,103 @@ string UserManager::getWholeLine()
     string input = "";
     getline(cin, input);
     return input;
+}
+
+
+int UserManager::getIdOfLoggedInUser()
+{
+    return loggedInUserId;
+}
+
+void UserManager::compareExpencesToIncomesInCurrentMonth()
+{
+float totalIncomesInCurrentMonth = IncomeManager.getIncomesFromCurrentMonth();
+float totalExpencesInCurrentMonth = ExpenceManager.getExpenceFromCurrentMonth();
+float balanceInCurrentMonth = 0;
+cout << "Przychody z biezacego miesaca = " << totalIncomesInCurrentMonth << endl;
+cout << "Koszty z biezacego miesaca = " << totalExpencesInCurrentMonth << endl;
+if (totalIncomesInCurrentMonth>totalExpencesInCurrentMonth)
+{
+    balanceInCurrentMonth = totalIncomesInCurrentMonth - totalExpencesInCurrentMonth;
+    cout << "W biezacym miesiacu wykazano zysk w wysokosci: " << balanceInCurrentMonth << " zl" << endl;
+}
+else if (totalExpencesInCurrentMonth>totalIncomesInCurrentMonth)
+{
+    balanceInCurrentMonth = totalExpencesInCurrentMonth - totalIncomesInCurrentMonth;
+    cout << "W biezacym miesiacu wykazano strate w wysokosci: " << balanceInCurrentMonth << " zl" << endl;
+}
+else if (totalExpencesInCurrentMonth==totalIncomesInCurrentMonth)
+{
+    cout << "W biezacym miesiacu bilans przychodow i kosztow wyniosl : " << balanceInCurrentMonth << " zl" << endl;
+}
+system ("pause");
+}
+
+void UserManager::compareExpencesToIncomesInPreviousMonth()
+{
+float totalIncomesInPreviousMonth = IncomeManager.getIncomesFromPreviousMonth();
+float totalExpencesInPreviousMonth = ExpenceManager.getExpenceFromPreviousMonth();
+float balanceInPreviousMonth = 0;
+cout << "Przychody z biezacego miesaca = " << totalIncomesInPreviousMonth << endl;
+cout << "Koszty z biezacego miesaca = " << totalExpencesInPreviousMonth << endl;
+if (totalIncomesInPreviousMonth>totalExpencesInPreviousMonth)
+{
+    balanceInPreviousMonth = totalIncomesInPreviousMonth - totalExpencesInPreviousMonth;
+    cout << "W biezacym miesiacu wykazano zysk w wysokosci: " << balanceInPreviousMonth << " zl" << endl;
+}
+else if (totalExpencesInPreviousMonth>totalIncomesInPreviousMonth)
+{
+    balanceInPreviousMonth = totalExpencesInPreviousMonth - totalIncomesInPreviousMonth;
+    cout << "W biezacym miesiacu wykazano strate w wysokosci: " << balanceInPreviousMonth << " zl" << endl;
+}
+else if (totalExpencesInPreviousMonth==totalIncomesInPreviousMonth)
+{
+    cout << "W biezacym miesiacu bilans przychodow i kosztow wyniosl : " << balanceInPreviousMonth << " zl" << endl;
+}
+system ("pause");
+}
+void UserManager::compareExpencesToIncomesFromCustomDates()
+{
+float totalIncomesInCustomDates = IncomeManager.getIncomesFromCustomDate();
+float totalExpencesInCustomDates = ExpenceManager.getExpenceFromCustomDate();
+float balanceInCustomDates = 0;
+cout << "Przychody z biezacego miesaca = " << totalIncomesInCustomDates << endl;
+cout << "Koszty z biezacego miesaca = " << totalExpencesInCustomDates << endl;
+if (totalIncomesInCustomDates>totalExpencesInCustomDates)
+{
+    balanceInPreviousMonth = totalIncomesInCustomDates - totalExpencesInCustomDates;
+    cout << "W biezacym miesiacu wykazano zysk w wysokosci: " << balanceInPreviousMonth << " zl" << endl;
+}
+else if (totalExpencesInCustomDates>totalIncomesInCustomDates)
+{
+    balanceInPreviousMonth = totalExpencesInCustomDates - totalIncomesInCustomDates;
+    cout << "W biezacym miesiacu wykazano strate w wysokosci: " << balanceInPreviousMonth << " zl" << endl;
+}
+else if (totalExpencesInCustomDates==totalIncomesInCustomDates)
+{
+    cout << "W biezacym miesiacu bilans przychodow i kosztow wyniosl : " << balanceInPreviousMonth << " zl" << endl;
+}
+system ("pause");
+}
+void UserManager::changePassword()
+{
+    User user;
+    string newPassword = "";
+    cout << "Podaj nowe haslo: ";
+    newPassword = getWholeLine();
+    for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
+    {
+        if (itr -> getUserId() == loggedInUserId)
+        {
+
+            itr -> setPassword(newPassword);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    fileWithUsers.saveAllUsersToFile(users);
+}
+void UserManager::logoutOfUser()
+{
+    loggedInUserId = 0;
 }
